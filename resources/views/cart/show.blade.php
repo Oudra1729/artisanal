@@ -56,7 +56,6 @@
                                                 <td class="text-center">
                                                     <form action="{{ route('cart.update') }}" method="POST" class="d-inline-flex align-items-center gap-1">
                                                         @csrf
-                                                        @method('PATCH')
                                                         <input type="hidden" name="product_id" value="{{ $item['product']->id }}">
                                                         <input type="number" name="quantity" value="{{ $item['quantity'] }}" min="1" max="{{ $item['product']->stock }}" class="form-control form-control-sm" style="width: 70px;">
                                                         <button type="submit" class="btn btn-sm btn-outline-or">OK</button>
@@ -66,7 +65,6 @@
                                                 <td class="text-end">
                                                     <form action="{{ route('cart.remove') }}" method="POST">
                                                         @csrf
-                                                        @method('DELETE')
                                                         <input type="hidden" name="product_id" value="{{ $item['product']->id }}">
                                                         <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Retirer">&times;</button>
                                                     </form>

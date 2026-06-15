@@ -22,7 +22,7 @@
                     <div class="card-body p-4">
                         <form action="{{ route('profil.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PATCH')
+                            @method('PUT')
 
                             <div class="text-center mb-4">
                                 @if ($user->avatar)

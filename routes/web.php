@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/mes-commandes/{commande}', [CommandeController::class, 'show'])->name('commandes.show');
 
     Route::get('/profil', [ProfilController::class, 'show'])->name('profil.show');
-    Route::put('/profil', [ProfilController::class, 'update'])->name('profil.update');
+    Route::match(['put', 'patch'], '/profil', [ProfilController::class, 'update'])->name('profil.update');
 });
 
 Route::middleware(['auth', 'artisan'])->prefix('artisan')->name('artisan.')->group(function () {
